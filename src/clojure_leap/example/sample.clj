@@ -9,7 +9,7 @@
                    "hands:" (leap/count (leap/hands frame)) "fingers:" (leap/count (leap/fingers frame)) "tools:" (leap/count (leap/tools frame)))]
     (when-let [hand (and (leap/hands? frame) (first (leap/hands frame)))]
       (let [fingers (leap/fingers hand)
-            avg-pos (v/divide (apply v/+ (map tip-position fingers)) 
+            avg-pos (v/divide (apply v/+ (map tip-position fingers))
                        (leap/count fingers))
             palm (l-hand/palm hand)
             sphere (l-hand/sphere hand)]
@@ -26,4 +26,3 @@
     (println "Press Enter to quit")
     (read-line)
     (leap/remove-listener! controller listener)))
-

@@ -15,11 +15,11 @@
   (vec (keep #(try (frame controller %) (catch Exception e nil)) (range history-count))))
 
 (defn ^ScreenList screens [^Controller controller]
-  (.calibratedScreens controller))
+  (.locatedScreens controller))
 
 (defn ^Screen screen [^Controller controller]
   ;; There is a guarantee that there is at least one screen
-  (first (.calibratedScreens controller)))
+  (first (.locatedScreens controller)))
 
 (defn connected? [^Controller controller]
   (.isConnected controller))
@@ -33,4 +33,3 @@
     :screens (screens controller)
     :state :frame
     :listener listener}))
-

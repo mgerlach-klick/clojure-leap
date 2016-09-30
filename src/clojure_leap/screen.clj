@@ -12,7 +12,7 @@
   (.closestScreenHit screen-list pointable))
 
 (defn empty? [^ScreenList screen-list]
-  (.empty screen-list))
+  (.isEmpty screen-list))
 
 ;; Screen
 ;;;;;;;;;;;;;;;
